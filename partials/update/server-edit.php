@@ -19,9 +19,9 @@ $stmt->execute();
 if ($stmt && $stmt->affected_rows > 0) {
   header("Location: $basepath/show.php?id=$id");
 } elseif ($stmt->affected_rows == 0) {
-  echo "valore non modificato";
+ 
   header("Location: $basepath/update.php?id=$id");
 } else {
-  echo "valore non ammesso";
+ 
   header("Location: $basepath/update.php?id=$id");
 }
