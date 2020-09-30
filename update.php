@@ -4,6 +4,7 @@ include __DIR__ . '/partials/update/server.php';
 ?>
 <div class="row mt-5">
     <div class="col-4 offset-4 ">
+        
         <form method="post" action="partials/update/server-edit.php">
             <div class="form-group">
                 <label for="roomNumber">Numero della stanza</label>
