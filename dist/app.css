@@ -10907,6 +10907,10 @@ a.text-dark:focus {
   box-sizing: border-box;
 }
 
+.wrapper.d-flex.flex-column {
+  min-height: 100vh;
+}
+
 .btn:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -10921,5 +10925,13 @@ a.text-dark:focus {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
+}
+
+.alert-hidden {
+  display: none;
+}
+
+.alert-show {
+  display: block;
 }
 
