@@ -18,7 +18,7 @@ include __DIR__ . '/partials/home/server.php';
       $class = '-danger alert-show';
       $message = 'Impossibile cancellare stanza';
     } ?>
-    <div class="alert alert<?php echo $class ?> alert-hidden" role="alert">
+    <div class="alert alert<?php echo $class ?>" role="alert">
       <?php echo $message ?>
     </div>
     <table class="table table-dark">
