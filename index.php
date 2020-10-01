@@ -10,9 +10,9 @@ include __DIR__ . '/partials/home/server.php';
     <?php 
     if (!empty($_GET['roomId'])) {
       $class = '-success alert-show';
-      $stanzaCancellata = $_GET['roomId'];
+      $stanzaCancellata = $_GET['number'];
       $message = 'stanza ' . $stanzaCancellata . ' cancellata';
-      } else {
+      } elseif(empty($_GET['roomId'])) {
       $class = '-danger alert-show';
       $message = 'Impossibile cancellare questa stanza';
     } ?>
@@ -42,6 +42,7 @@ include __DIR__ . '/partials/home/server.php';
               <form action="partials/delete/server.php" method="post">
                 <input type="submit" id="delete-room" class="btn btn-danger" name="delete" value="delete"></input>
                 <input name="id" type="hidden" value="<?php echo $room['id'] ?>"></input>
+                <input name="roomNumber" type="hidden" value="<?php echo $room['room_number'] ?>"></input>
               </form>
             </td>
           </tr>
