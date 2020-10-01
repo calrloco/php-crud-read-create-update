@@ -25,7 +25,7 @@ function remove($conn, $table, $id,  $path)
     $sql = "DELETE FROM $table WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
-    if ($stmt && $stmt->affected_rows > 0) {
+    if ($stmt) {
         header("Location: $path/index.php?roomId=$id");
     } else {
         header("Location: $path/index.php");
@@ -33,15 +33,16 @@ function remove($conn, $table, $id,  $path)
     $stmt->execute();
     $conn->close();
 }
-function update($id,$conn,$table){
+function update($id, $conn, $table)
+{
     $sql = "SELECT * FROM $table WHERE id = $id";
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
     } elseif ($result) {
-         $row = '';
+        $row = '';
     } else {
-       $row = false;
+        $row = false;
     }
     $conn->close();
     return $row;
