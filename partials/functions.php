@@ -29,7 +29,7 @@ function remove($conn, $table, $id,  $path,$roomNumber)
     if ($stmt && $stmt->affected_rows > 0) {
         header("Location: $path/index.php?roomId=$id&number=$roomNumber");
     } else {
-        header("Location: $path/index.php?roomId=");
+        header("Location: $path/index.php?roomId");
     }
    
     $conn->close();
