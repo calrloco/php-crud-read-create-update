@@ -14,11 +14,12 @@ include __DIR__ . '/partials/home/server.php';
       $class = '-success alert-show';
       $stanzaCancellata = $_GET['number'];
       $message = 'stanza ' . $stanzaCancellata . ' cancellata';
-    } else {
+    } elseif(isset($_GET['roomId'])) {
       $class = '-danger alert-show';
       $message = 'Impossibile cancellare stanza';
+      
     } ?>
-    <div class="alert alert<?php echo $class ?>" role="alert">
+    <div class="alert alert<?php echo $class ?> alert-hidden" role="alert">
       <?php echo $message ?>
     </div>
     <table class="table table-dark">
