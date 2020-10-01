@@ -2,7 +2,7 @@
 include __DIR__ . '/../database.php';
 
 $sql = "UPDATE  stanze 
-SET room_number = ?,floor = ?,beds = ? 
+SET room_number = ?,floor = ?,beds = ?, updated_at = NOW()
 WHERE id = ?";
 
 $stmt = $conn->prepare($sql);
@@ -19,9 +19,9 @@ $stmt->execute();
 if ($stmt && $stmt->affected_rows > 0) {
   header("Location: $basepath/show.php?id=$id");
 } elseif ($stmt->affected_rows == 0) {
- 
   header("Location: $basepath/update.php?id=$id");
 } else {
- 
   header("Location: $basepath/update.php?id=$id");
 }
+$stmt->close();
+$conn->close();
