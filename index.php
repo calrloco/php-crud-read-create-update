@@ -5,7 +5,7 @@ include __DIR__ . '/partials/home/server.php';
 
 
 
-<div class="row mt-5">
+<div class="row mt-5 mb-5">
   <div class="col-8 offset-2">
     <?php
     $class = 'alert-hidden';
@@ -14,10 +14,9 @@ include __DIR__ . '/partials/home/server.php';
       $class = '-success alert-show';
       $stanzaCancellata = $_GET['number'];
       $message = 'stanza ' . $stanzaCancellata . ' cancellata';
-    } elseif(isset($_GET['roomId'])) {
+    } elseif (isset($_GET['roomId'])) {
       $class = '-danger alert-show';
       $message = 'Impossibile cancellare stanza';
-      
     } ?>
     <div class="alert alert<?php echo $class ?> alert-hidden" role="alert">
       <?php echo $message ?>
