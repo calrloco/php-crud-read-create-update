@@ -7,16 +7,18 @@ include __DIR__ . '/partials/home/server.php';
 
 <div class="row mt-5">
   <div class="col-8 offset-2">
-    <?php 
+    <?php
+    $class = 'alert-hidden';
+    $message = '';
     if (!empty($_GET['roomId'])) {
       $class = '-success alert-show';
       $stanzaCancellata = $_GET['number'];
       $message = 'stanza ' . $stanzaCancellata . ' cancellata';
-      } elseif(empty($_GET['roomId'])) {
+    } elseif (isset($_GET['roomId'])) {
       $class = '-danger alert-show';
-      $message = 'Impossibile cancellare questa stanza';
+      $message = 'Impossibile cancellare stanza';
     } ?>
-    <div class="alert alert<?php echo $class ?> alert-hidden" role="alert">
+    <div class="alert alert<?php echo $class ?>" role="alert">
       <?php echo $message ?>
     </div>
     <table class="table table-dark">

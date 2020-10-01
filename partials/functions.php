@@ -48,3 +48,4 @@ function update($id, $conn, $table)
     $conn->close();
     return $row;
 }
+
