@@ -14,7 +14,7 @@ include __DIR__ . '/partials/home/server.php';
       $class = '-success alert-show';
       $stanzaCancellata = $_GET['number'];
       $message = 'stanza ' . $stanzaCancellata . ' cancellata';
-    } elseif (isset($_GET['roomId'])) {
+    } else {
       $class = '-danger alert-show';
       $message = 'Impossibile cancellare stanza';
     } ?>
